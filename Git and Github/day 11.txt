@@ -1,0 +1,52 @@
+The core part of Git is written in C, which ignores runtime overheads associated with other high-level languages.
+Git was developed to work on the Linux kernel; therefore, it is capable enough to handle large repositories effectively. From the beginning, speed and performance have been Git's primary goals.
+Supports non-linear development
+Git supports seamless branching and merging, which helps in visualizing and navigating a non-linear development. A branch in Git represents a single commit. We can construct the full branch structure with the help of its parental commit.
+Branching and Merging
+Branching and merging are the great features of Git, which makes it different from the other SCM tools. Git allows the creation of multiple branches without affecting each other.
+
+We can perform tasks like creation, deletion, and merging on branches, and these tasks take a few seconds only. Below are some features that can be achieved by branching:
+We can create a separate branch for a new module of the project, commit and delete it whenever we want.
+We can have a production branch, which always has what goes into production and can be merged for testing in the test branch.
+We can create a demo branch for the experiment and check if it is working. We can also remove it if needed.
+The core benefit of branching is if we want to push something to a remote repository, we do not have to push all of our branches. We can select a few of our branches, or all of them together.
+
+Data Assurance 
+The Git data model ensures the cryptographic integrity of every unit of our project. It provides a unique commit ID to every commit through a SHA algorithm. We can retrieve and update the commit by commit ID. Most of the centralized version control systems do not provide such integrity by default. 
+ 
+ Staging Area The Staging area is also a unique functionality of Git. It can be considered as a preview of our next commit, moreover, an intermediate area where commits can be formatted and reviewed before completion. When you make a commit, Git takes changes that are in the staging area and make them as a new commit. We are allowed to add and remove changes from the staging area. The staging area can be considered as a place where Git stores the changes.
+
+Another feature of Git that makes it apart from other SCM tools is that it is possible to quickly stage some of our files and commit them without committing other modified files in our working directory.
+ 
+Maintain the clean history
+Git facilitates with Git Rebase; It is one of the most helpful features of Git. It fetches the latest commits from the master branch and puts our code on top of that. Thus, it maintains a clean history of the project.
+
+GitHub is an immense platform for code hosting. It supports version controlling and collaboration and allows developers to work together on projects. It offers both distributed version control and source code management (SCM) functionality of Git. It also facilitates collaboration features such as bug tracking, feature requests, task management for every project.
+Essential components of the GitHub are:
+Repositories
+Branches
+Commits
+Pull Requests
+Git (the version control tool GitHub is built on)
+
+GitHub is a place where programmers and designers work together. They collaborate, contribute, and fix bugs together. It hosts plenty of open source projects and codes of various programming languages.
+Some of its significant features are as follows.
+Collaboration
+Integrated issue and bug tracking
+Graphical representation of branches
+Git repositories hosting
+Project management
+Team management
+Code hosting
+Track and assign tasks
+Conversations
+
+			GitHub																Git
+It is a cloud-based tool developed around the Git tool.	It is a distributed version control tool that is used to manage the programmer's source 												code history.
+It is an online service that is used to store code 		Git tool is installed on our local machine for version 						       and push from the computer running Git.		        controlling and interacting with online Git service.
+It is dedicated to centralize source code hosting.		It is dedicated to version control and code sharing.
+It is managed through the web.					It is a command-line utility tool.
+It provides a desktop interface called GitHub 			The desktop interface of Git is called Git GUI.								
+desktop GUI.
+It has a built-in user management feature.			It does not provide any user management feature
+It has a market place for tool configuration.			It has a minimal tool configuration feature.

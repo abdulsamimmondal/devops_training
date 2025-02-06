@@ -1,0 +1,132 @@
+					GitHub																							GitLab
+It was launched in 2008. It is a Git repository hosting service.									It was launched as a project in 2011 as an alternative to the available Git repository hosting service.
+It is free for public repositories and paid for private repositories.								It is free for both private and public repositories.
+It has Gists (a way to share code snippets)												It does not have Gists.
+We cannot attach any file to any issue.													We can attach any file to any issue.
+It has a fast interface.																Comparatively, it has a slow interface.
+In GitHub, we can decide the read or write access of a user to a repository.						In GitLab, we can set and modify user permissions according to their roles.
+It is the largest Repository hosting service. 												It contains approximate 100+ million repositories. It has lesser projects than GitHub.
+
+					GitHub																							Bitbucket
+It has a user-friendly and fast interface.													It has a slick and clean interface, which provides a professional view.
+It is limited to the Git repository only.										It is not limited to just Git, it also supports other version control systems like Mercurial, but it does not support svn.
+It facilitates with graphs: pulse, contributors, commits, code frequency, members of it.	It assists with REST APIs to build third-party applications which can be used in any development language.
+It is free for public repositories and paid for private repositories.				It is free for both private and public repositories. But we can have a maximum of five members for a private repository.
+GitHub comes with a lot of features and allows you to create your workflows.						Bitbucket provides a more built-in option for flexibility.
+We cannot make a private repository on free accounts.										We can create an unlimited private repository for up to five users.
+
+SYN command		GIt command				Git Behavior
+status				status					Report the state of working tree
+add					add						Required for each path before making a commit
+commit				commit					Store prepared changes in local revision history
+rm, 					delete, rm					Prepare paths for deletion in next commit
+move				mv						Prepare relocated content for next commit
+checkout				clone					Acquire the entire history of a project locally for the first time
+ 					branch					Create Local context for commits
+ 					merge					Join branch histories and changes to working tree
+ 					log						No network required
+ 					push						Upload commit history to Github/centralized Git host
+ 					pull						Download and integrate Github repository history with local on
+ 					fetch						Download Github repository history with no other action
+
+Adding a New Subproject
+Submodule
+git submodule add <https://github.com/githubraining/example-git>
+git commit -m "adding new submodule"
+The submodule add command adds a new file called gitmodules along with a subdirectory containing the files from example-submodule. Both are added to your index (staging area) and you simply need to commit them. The submodule’s history remains independent of the parent project.
+
+Subtree
+git subtree add --prefix=example-submodule <https://github.com>
+The subtree command adds a subdirectory containing the files from example-submodule. The most common practice is to use the —squash option to combine the subproject’s history into a single commit, which is then grafted onto the existing tree of the parent project. You can omit the —squash option to maintain all of the history from the designated branch of the subproject
+https://github.com/githubtraining/example-submodule main --squash
+
+Submodule
+to view a diff of the submodule:
+# show changes to the submodule commit git diff example-submodule #show oneline log of new commits in the submodule git diff --submodule example-submodule #show changes to the files in the submodule git dff --submodule=diff
+
+Clonning a Repository with a subproject
+Submodule
+To clone a repository along with its submodules:
+git clone --recurse-submodules URL
+If you forgot —recurse-submodules. you can clone and initialize all submodules:
+git submodule update --init --recursive
+Adding —recursive is only required if any submodule itself has submodules.
+
+Pulling in Subproject Updates
+ 
+Submodule
+By default, the submodule repository is fetched, but not updated when you run git pull in the superproject.
+-> You need to use git submodule update, or add the --recurse-submodule flag to pull:
+	git pull
+	git submodule update --init --recursive
+	# or, in one step (Git >= 2.14)
+	git pull --recurse--submodule
+--init is required if the superproject added new submodules, and --recursive is needed if any submodule itself has submodules
+if ever the superproject changes the URL of the submodule, a separate command is required
+
+# copy the new URL to your local config
+git submodule sync --recursive
+
+# update the submodule from the new URL
+git submodule update --init --recursive
+
+—recursive is only needed if any submodule itself has submodules.
+
+Changing Branches
+Submodule
+By default, the submodule working tree is not updated to match the commit recorded in the superproject when changing branches.
+You need to use git submodule update, or add the —recursive-submodules flag to switch
+ 
+git swith <branch> 
+git submodule update --recursive 
+# or , in one step (Git >= 2.14) 
+git switch --recurse-submodules <branch>
+
+Pulling in subproject Update
+Submodule
+# Update the submodule repository
+git submodule update --remote
+# Record the changes in the superproject
+git commit -am "Update Submodule"
+If you have more than one submodule, you can add the path to the submodule at the end of the git submodule update —remote command to specify which subproject to update.
+By default, git submodule update —remote will update the submodule to the latest commit on the main branch of the submodule remote.
+You can change the default branch for further calls with:
+as
+# Git >= 2.22
+git submodule set-branch other-branch
+# or
+git config -f .gitmodules submodule.example-submodule.branch
+
+Making Changes to a Subproject
+In most cases, it is considered best practice to make changes in a separate clone of the subproject repository and pull them into the parent project. When this is not practical, follow these instructions.
+
+ 
+					Submodule																			Subtree
+Access the submodule directory and create a branch								No special command required changes will be committed on the present project bench
+cd example-submodule
+git switch -b branch-name main
+															It is possible to create commits mixing changes to the subproject and the parent project, but this is generally discouraged
+Changes require two commits one in the subproject repository and one in the parent repository.
+ Don’t forget to push in both the submodule and the superproject
+
+Pushing Changes to the Subproject Repository
+Submodule
+While in the submodule directory:
+git push
+Or while in the parent directory:
+git push --recurse-submodules=on-demand
+
+Subtree
+git subtree push --prefix=example-submodule https://github.com/githubtraining
+
+Helpful Configs for Submodules
+Always show the submodule log when you diff:
+git config --global diff.submodule log
+Show a short summary of submodule changes in your git status message:
+git config --global status.submoduleSummary true
+Make push default to --recurse-submodules=on-demand:
+git config --global push.recurseSubmodules on-demand
+
+
+
+
