@@ -1,0 +1,255 @@
+Advantages  
+Some of the advantages are: 
+1) It is centralised, which means that all data and services are stored and managed in a single place. This makes it easier to maintain, update, and secure the system. 
+2) It is cost-efficient, as it requires less hardware and software resources for the client side. The client only needs a network connection and an application or web browser to access the server. 
+3) It has high performance and low latency, as the server can handle many requests from many clients simultaneously and efficiently. 
+Disadvantages 
+Some of the disadvantages are: 
+1) It has limited scalability, as it depends on the capacity and availability of the server. If the server is overloaded or fails, the system may not function properly or at all. 
+2) It has high network dependency, as it relies on the network connection between the client and the server. If the network is slow or disrupted, the system may experience delays or errors. 
+3) It has complex architecture, as it involves multiple components and layers that need to be designed, implemented, and coordinated. The system may also face challenges such as security, synchronisation, and compatibility.
+
+osi model
+
+physical layer-transmits raw bit stream over physical medium.
+data link layer-defines format of data on the network.
+network layer-decides which physical path the data will take.
+transport layer-transmits data using transmission protocols including tcp and udp.
+session layer-maintains connections and is responsible for controlling ports and sessions.
+presentation layer-ensures that data is in usable format and is where data encryption occurs.
+application layer-human computer interaction layer, where applications can access network services.
+
+application layer
+ return content in required format when website requests content. It serves as the interface between the end user applications and underlying network services. The layer provides protocols and services that are directly utilized by end user applications to communicate across the network.
+key functionalities includes resource sharing, remote file access and network management.
+eg of protocols operating at the application layer includes http for web browsing, ftp for file transfer, smtp for email services and dns for converting domain names to ip addresses.
+these protocols ensure that user applications can effectively communicate with each other and with servers over a network.
+
+presentation layer
+the presentation layer is also known as syntax layer. 
+it is responsible for translating the data between the application layer and the network format.
+it ensures that the data sent from the application layer of 1 system is readable by the application of another system.
+this layer handles data formatting, encryption and compression facilitating interoperability between different systems.
+one of the key roles of presentation layer is data translation and code conversion.
+it transforms data into a format that the application layer can understand.
+it also includes encryption protocols to ensure data security during transmission and compression protocols to reduce the amount of data for efficient transmission.
+
+session layer
+the session layer manages and controls the connections between computers.
+it establishes, maintains and terminates connections, ensuring that data exchanges occurs efficiently in an organized manner.
+the layer is responsible for checkpointing and recovering which allows sessions to resume after operations.
+the protocols operating at the session layer include (rpc) remote procedure call which enables a program to execute a procedure on a remote host as if it were local and the session establishment phase in protocols like sql.
+these services enable reliable communication especially in complex network environments.
+
+transport layer
+provides end to end communication services for applications. it ensures complete data transfer, error recovery and flow control between hosts.
+this layer segments and reassembles data for efficient transmission and provides reliability with error detection and correction mechanisms.
+protocols at this layer includes tcp and udp.tcp is connection oriented and ensures reliable data transfer with error checking and flow control, making it suitable for applications like web browsing and email. 
+udp is connectionless offering faster but less reliable transmission usually suitable for applications like video streaming and online gaming.
+
+network layer
+packets creation-transport-packets assembly
+its responsible for data routing, forwarding and addressing 
+it determines the best physical path for data to reach its destination based on network conditions, priority of service and other factors.
+this layer manages logical addressing through ip addresses and handles packet forwarding.
+protocols for this layer includes ip for routing and addressing, icmp(internet control message protocol) for diagnostic and error reporting purposes and routing protocols like rip(routing information protocol) that manages routing of data across networks.
+
+data link layer
+responsible for node to node data transfer, error detection and correction.
+it ensures that data is transmitted to the correct device on local network segment. 
+this layer manages mac addresses and is divided into 2 sub layers llc and mac. llc is logical link control and mac is media access control.
+protocols includes ethernet which defines the rules for data transmission over lan and p2p protocol for direct connections between 2 network nodes.
+it also has mechanisms for detecting errors and correcting those errors that occur in physical layer.
+
+physical layer
+responsible for physical connection between devices. it defines the hardware elements involved in the network including cables, switches and other physical components. 
+this layer specifies electrical, optical and radio characteristics of the network.
+Functions of the Physical Layer include the modulation, bit synchronization, and transmission of raw binary data over the physical medium. Technologies such as Fiber Optics and Wi-Fi operate at this layer, ensuring that the data physically moves from one device to another in the network.
+
+note: you can browse for host 2 host communication.
+
+protocols
+
+there are 3 types of protocols in the network
+1.network communication
+2.network management
+3.network security
+
+ network communication
+http, tcp, udp, border gateway protocol, address resolution protocol, ip, dynamic host configuration protocol.
+
+network management
+icmp, simple network management protocol, ftp, pop3, telnet.
+ 
+network security
+https, ssl(secured socket layer), tls(transport layer security, imap, sip(session initiation protocol, rtp(realtime transport),rlp(resource location), p2p tunneling protocol.
+
+ports in networking
+whenever any application in 1 computer sends data to another application of a different computer then it sends using ip address and mac address. the system understands that this data is for a specific application through the port mentioned. IN a computer the data is first received using their ip or mac address then it is delivered to the application whose port number is with the data packets.
+
+types of ports
+
+well known ports, registered ports, dynamic ports
+
+well known ports
+its range is 0 to 1023
+it is reserved for common and specifically used service.
+it is used by some widely adopted protocols and services like http(80), ftp(21), dns(53), ssh(22) etc.
+
+registered port
+it ranges from 1024 to 49151
+these are used by applications that are not as common.
+but it is used by those applications or services which require its specific port.
+organizations can ask iana(internet assigned number authority) for any specific port number within this range.
+
+dynamic ports
+it ranges from 49152 to 65535
+its also known as ephemeral or private port
+its used for those connections that are temporary or short lived.
+its not registered or assigned and can be used by any process.
+
+why ports are required?
+mux and demux
+end to end communication
+protocol identification
+security and firewalls
+load balancing
+custom application communication
+
+port no.      service     used for           		protocol
+20	      ftp-data	  file transfer			tcp
+21	      ftp	  file transfer protocol	tcp
+22	      ssh	  secure remote login		tcp
+23	      telnet	  uncrypted remote access	tcp
+25	      smpt	  email routing			tcp
+53	      dns	  domain name resolution 	udp/tcp
+67	      dhcp-s	  dhcp server			udp
+68	      dhcp-c	  dhcp client			udp
+69	      tftp	  trivial file transfer		udp
+80 	      http	  web traffic 			tcp
+110	      pop3 	  email retrieval 		tcp
+123 	      ntp 	  time synchronization 		udp
+143 	      imap 	  email management		tcp
+443	      https	  secure web traffic		tcp
+3306	      MySQL	  databse service		tcp
+3389	      rdp	  remote desktop access		tcp
+5432	      PostgreSQL  databse service		tcp
+5060	      sip	  voip communication		udp/tcp
+5900	      vnc	  remote desktop sharing	tcp
+8080	      http-alt 	  alternative web traffic	tcp
+2049	      nfs	  network file system 		tcp/udp
+161	      snmp	  network management		udp
+162	      snmp-trap   file sharing			tcp
+445	      mongodb     database service		tcp
+5000	      upnp	  universal plug and play	udp/tcp
+
+submarine cables
+
+polyethelene, mylar tape, stranded steel wires, aluminium water barrier, polycarbonate, copper or aluminium tube, petroleum jelly, optical fibres.
+submarine cables play a major role in global interconnected networks.
+it carries around 99% of international communication traffic.
+their has been an exponential increase in the demand for data and bandwidth intensive applications which includes audio and video streaming and growing demand for cloud based services.
+submarine cables exists from 1850s and it was used for telegraph and later telecommunication applications.
+after emergence of optic fibres we are using optical fibres in the submarine cables. 
+the current speed is around 200tb per sec and there are approx 400 submarine cables with 1.2m km crisscrossing the earth.
+multiple global telecom companies and internet providers have come together to finance this global submarine network cable connectivity.
+
+factors contributing to the growth of global submarine cables-
+cloud services
+datacentres
+content delivery networks
+enterprise applications
+ott
+mobile applications
+
+lan
+short for local area network
+connects a group of computers within a limited geographical area.
+high bandwidth for data transfer 
+owned by private companies or individuals
+limited to 100 to 1000m
+lower setup cost due to inexpensive devices.
+higher data transfer speeds with 10,100 and 1000 mbps ethernet.
+
+wan
+short for wide area network
+covers a large geographical area such as a state, country or a continent.
+low bandwidth for data transfer.
+established under distributed ownership
+spans a huge area of 100000 km
+higher setup cost than lan and man
+low data transfer rates between 10 to 20 mbps
+
+
+man
+short for metropolitan area network
+confined to a city or town. distance coverage is larger than lan and smaller than wan
+bandwidth is moderate for data transfer
+ownership can be private or public
+distance coverage is upto 100km
+moderate installation costs.
+speed can go up to 100 mbps
+
+modem vs router
+computer-modem-telephone network-modem-terminal
+a modem is short form of modulator/demodulator. its a hardware component/device that can connect computers and other devices such as routers and switches to the internet. modems convert or modulate analog signals coming from telephone wire into a digital form that is in form of 0s and 1s. it acts as bridge between telephone line and computer. it converts input analog signal to digital signal and directs it to computer and vice versa.
+
+router 
+
+the router is supposed to connect totally different networks along. The essential distinction between electronic equipment and a modem router is that electronic equipment is necessary for connecting your electronic network to the web whereas, a router is crucial to direct the trail to the traffic of information packets on the network.
+
+Modem																				Router
+The modem is crucial to access the net because it connects your laptop to ISP.		While in which you can access the net while not employing a router.
+In modem, the information packet is not examined; thus, the security threat is 		While in the router, the information packet is always 	
+often there.															examined before forwarding it, to work out the threat.
+It is placed straight to the computer or it is also placed between a telephone 			While a router is placed between electronic line and a router.									
+equipment and a network.
+The modem performs signal decoding by decoding the ISP signal.					While a router does not perform signal decoding.
+Modem brings the requested info from the net to your network.					While the router distributes that requested data to your PC.
+Modem is not secure.													Router is highly secure.
+Modem works on the Data Link Layer of the OSI Model							Router works on the Physical Layer and Network Layer of the OSI 	Model.
+
+Types of Modem
+There are multiple types of modems available but the important of them are:
+Dial-Up: This is one of the earlier types of modem connection that uses a phone line to connect to an Internet Service Provider, But these are very slow modems.
+Digital Subscriber Line: DSL provides high speed internet access over telephonic lines, but they operate on different frequency bands.
+Satellite Modem: They are used for accessing the internet over satellite communication, they are used in that area where the normal internet connection is not possible.
+Cable: These are those modems that use a cable TV line to connect with an Internet Service Provider. This is the highly used type of modem connection.
+Internal Modem: The internal modem is connected inside the system/computer system, due to which its rate of data transmission is very slow and its installation is quite complex.
+External Modem: An external provides modem is connected outside the system/computer system by using a cable , it provide high data transmission rate, it is little bit expensive but its installation is very easy.
+Two-wire Modem: It uses a pair of wire that is why its called Two-wire Modem, these two wires are used for incoming and outgoing signals.
+Four-wire Modem: It uses the pair of wires for incoming and outgoing signal. So it is double of Two-wire Modem, that’s why this is called Four-wire Modem.
+
+types of topology
+
+point to point topology
+directly links 2 nodes and reserves entire bandwidth of connection for them to communicate with 1 another.
+rely on cables or wires that connects two endpoints. logical topological connections using satellite links and microwaves are more common nowadays.
+image = https://media.geeksforgeeks.org/wp-content/uploads/20240614235231/Point-to-point-topology.png
+
+bus topology
+all nodes are linked using a single cable with a terminator on both ends. this configuration sees one main cable acting as backbone for whole network.
+tree, hybrid, mesh, ring, star.
+https://media.geeksforgeeks.org/wp-content/uploads/3-55.png
+
+3. Ring Topology image = https://images.spiceworks.com/wp-content/uploads/2022/03/10110904/17.png
+4. Star Topology image = https://media.geeksforgeeks.org/wp-content/uploads/20241028174732747554/Star-Topology.png
+5. Tree Topology image = https://images.spiceworks.com/wp-content/uploads/2022/03/10110848/19.png
+6. Mesh Topology image = https://images.spiceworks.com/wp-content/uploads/2022/03/10110856/20.png
+
+peer to peer architecture customizes protocols to ensure decentralized networks can support specific use cases.
+the purpose of the protocols is to ensure that the data is distributed across the network and that nodes can locate and exchange data with each other.
+IMAGE = https://media.geeksforgeeks.org/wp-content/uploads/20220826190244/GFGP2PArchitecture.png 
+
+PROS:
+		-> There is no single point of failure since the network is not dependent on a central server.If one nodes fails the network can still function .
+		->P2P networks will naturally scale out network resources as more peers join 
+		->Since there is no need for a central server the cost of setting up and maintaining the network can be lower 
+		->P2P networks can offer a degree of anonymity and privacy since there is no central authority controlling or monitoring the network 
+CONS:
+		->Without a central authority it can be challenging to enforce network security policies uniformly across all nodes 
+		->It can be difficult to ensure data integrity across all peers if nodes randomly join and leave 
+		->While P2P networks can scale easily the performance can degrade if too many peers need to access the same resources simultaneously
+		->Without central control it can be difficult to prevent the distribution of harmful or unethical content 
+
+types of vpn:site to site, remote access, cloud, ssl, double

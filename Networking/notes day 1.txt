@@ -1,0 +1,59 @@
+requirements for establishing a data center:
+1.place-fixed capital-huge capital
+2.physical infrastructure-building, ac
+3.resources-h/w,n/w components
+4.ppl-hire and technicians
+5.s/w installed-os and apps
+why customers move to cloud?
+increasing agility, accelerate time to market, increase innovation, scale seamlessly, decreasing optimizing costs, minimizing security vulnerabilities, reducing management complexities, decreasing complexity and risk.
+fundamentals of networking-
+client server architecture is a network model that allows communication and data exchange between different applications over a single or multiple servers.
+it can be classified into 2 parts
+1.client:client is an application that requests services from the server such as data retreival, storage, calculations and other functions.
+2.server:its an application that processes client requests, sends responses or it performs specific actions. The client and the server may reside on the same machine or different devices across the network.
+3.client server architecture is widely used in applications such as email, web browsing, online banking and e commerce.
+components of client server architecture-client server architecture depends on 3 main components that need to work together for its function. These components are 
+1. client: a client device or software that requests services from a server. clients are consumer-facing and often include web browsers, mobile applications or desktop applications that ppl can interact with. they communicate with server to retrieve data, make transactions or perform other tasks by delegating that responsibility to the server.
+2.server:a server is a computer or program that offers services or solutions to clients over a network. servers handle processing of client requests which includes tasks like file storage, database access and application hosting, along with backend activities like computations, data management and business logic significantly reducing what client needs to handle.
+3.network:this serves as the channel through which clients and servers are connected for data transfer between them. networks range from lan within a single building to wan and internet, which can span countries. it acts as the intermediary, facilitating the interchange or requests and responses between clients and servers, which influences speed and reliability of these interactions.
+4.protocols: rules that define how data is exchanged between clients and servers, ensuring communication is orderly, secure, and understandable. common protocols include http or https for web services, ftp for file transfers and smtp for email. they help bridge communication between different systems, independent of their technology stack.
+5.middleware:acts as a bridge between client side and server side code, enabling them to communicate. It performs tasks such as authentication, load balancing, data translation and message queuing, simplifying interactions within client server model by enhancing transaction speed, scalability and integration.
+6. application logic: it is the code and processes that determine how a server responds to client requests, involving business rules, big data processing and workflows on server side. it ensures the server correctly interprets client requests, performs necessary calculations or data manipulations and delivers appropriate responses.
+there are different types of client server architecture, depending on how many tiers or layers are involved in the communication process. Some of the types are
+types of client server architecture- 1 tier,2 tier,3 tier, n tier
+
+one tier
+a self contained applications on a single platform. the client, server and database are all on the same machine. the client handles user interaction and business logic, server provides services like data storage and processing and database manages data. while simple and popular for small apps, this architecture is rarely used in production because it doesn't meet most system requirements.
+
+2 tier
+
+this basic architecture involves direct communication between the client and server without an intermediate layer. the client manages ui and business logic while server handles data storage and processing. an eg is web browser requesting pages from a web server, which responds with html files. its easy to implement but has drawbacks like low scalability, high network traffic and security risks.
+
+3 tier
+
+a more complex client server setup with an intermediate layer that handles business logic acting as a bridge between client and server. the client deal with ui while server manages data storage. an eg is online banking system where client is a web browser, middleware check transactions and server stores account data. this architecture improves scalability, performance and security but increases complexity and costs.
+
+n tier
+
+a more flexible client server architecture with more than 3 tiers, allowing greater scalability, flexibility, and modularity. each tier can be distributed across different machines or networks and updated independently. an eg is an e commerce system with a web browser displaying product catalog, a web server handling http requests, an application server processing business logic and a database storing product information. while suitable for complex systems it requires more resources and management.
+
+How Does Client-Server Architecture Work?  
+The basic steps of how Client-Server Architecture works are: 
+1) In the first step, the client sends a request to the server using the network medium. The request can be a query, a command, or a message. 
+2) In the second step, the server receives the request and processes it according to its logic and data. The server may access its own resources or other servers to fulfil the request. 
+3) In the third step, the server sends a response back to the client using the network medium. The response can be Data, an acknowledgement, or an error message. 
+4) Lastly, the client receives the response and displays it to the user or performs further actions based on it.
+
+some examples-
+
+1) Email Servers: Email has evolved into the primary communication method for businesses due to its speed and convenience. Various server components work together to deliver emails between users across different mail servers.
+2) File Servers: When saving documents on services like Google Docs or Microsoft Office, you're interacting with file servers. These servers store data centrally and allow multiple clients to access it.
+3) Web Servers: These high-powered servers host websites, which web clients access through DNS or an IP address. Here's a simplified process:
+a) A user enters a URL in the browser.
+b) The browser requests the IP address from the  Domain Name System (DNS) .
+c) The DNS server provides the IP address to the browser.
+d) The browser sends an HTTPS or HTTP request to the web server.
+e) The server sends back the requested files.
+f) The user retrieves the files, and the process continues as needed.
+These examples highlight how Client-Server Architecture forms the foundation of many digital services we rely on daily.
+
