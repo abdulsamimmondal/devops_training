@@ -1,0 +1,61 @@
+Kubernetes:
+ 
+It is a devops deployment tool 
+It is mainly used to automate the deployments of containers based applications across the cluster of nodes 
+It also manages services of containerized applications using various methods like scalability, predictability and high availability.
+
+Kubernetes Terminology
+
+1.Pod: 
+	It is a smallest and basic unit of Kubernetes application, this object indicates the processes which are running in the cluster 
+
+2.Node:
+	A node is nothing but a single host which is used to run the virtual machine or physical machine. 
+	A node in the Kubernetes cluster is known as minion.
+
+3.Service:
+	A service in Kubernetes is logical set of pods which work together. 
+	with the help of services users can manage load balancing configurations. 
+
+4.Replicaset:
+	A Replicaset in the Kubernetes is used to identify the particular number of pod replicas running at a given time.
+	Replicaset replaces replication controller because it is more powerful and allows a user to use the set based label selector.
+
+5.Namespace:
+	Kubernetes supports various virtual clusters which are known as Namespaces. 
+	It is a way of dividing the cluster resources between two or more users. 
+
+6.kublet:
+	In Kubernetes architecture kublet is the primary node agent that runs on each node within the cluster 
+	It is responsible for managing containers on that node by ensuring they are running according to the provided pod specifications 
+	It acts as a intermediary between Kubernetes control plane and individual worker nodes to execute containerized applications
+	It receives instructions from the control plane and communicates with the container runtime to start stop monitor and check container operations on the node 
+
+7.Kubproxy:
+	Kubproxy is a network proxy that runs on each node in Kubernetes cluster 
+	It is responsible for routing traffic between services and pods and for implementing virtual IP for services.
+	It is Kubernetes agent installed on every node in the cluster.
+	It monitors service objects and the changes made to their and translates them into actual network rules inside the node.
+
+USING KUBECTL TO CREATE A DEPLOYMENT:
+1.Once you have running Kubernetes cluster you can deploy your containerized applications on top of it , to do so we create a Kubernetes deployment 
+2.The deployment instructs Kubernetes how to create an update instances of your application
+3.Once you have created the deployment, Kubernetes control plane schedules the application instances included in that deployment to run on individual nodes in the cluster 
+4.Once application are created Kubernetes deployment controller continuously monitors those instances 
+5.If the node hosting an instance goes down or gets deleted, the deployment controller replaces the instance with an instance on another node on the cluster 
+6.This provides a self healing mechanism to address machine failure or maintenance  
+
+Kubernetes Architecture
+
+The architecture of Kubernetes follows the client-server architecture. It consists of 2 main components; one is the Master node (Control Plane) and the second one is the Worker node (Slave node).
+
+API Server: The Kubernetes API server receives the REST commands which are sent by the user. After receiving, it validates the REST requests, process and then executes them. After the execution of REST commands, the resulting state of a cluster is saved in ‘etcd’ as a distributed key-value store.
+
+Scheduler: The scheduler in a master node schedules the tasks to the worker nodes. And, for every worker node, it is used to store the resource usage information. In other words, it is a process that is responsible for assigning pods to the available worker nodes.
+
+Controller Manager: The Controller Manager is also known as a controller. It is a daemon that executes in the non-termination control loops. The controllers in a master node perform a task and manage the state of the cluster. In the Kubernetes, the controller manager executes the various types of controllers for handling the nodes, endpoints etc.
+
+ETCD: It is an open source, simple, distributed key-value storage which is used to store the cluster data. It is a part of a master node which is written in a GO programming language. Now, we have learned about the functioning and components of a master node.
+ 
+
+ 
